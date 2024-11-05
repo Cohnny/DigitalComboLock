@@ -33,10 +33,6 @@ This project is an Arduino-based digital lock system that uses a keypad, servo m
 1. **Connect Hardware**: Connect the servo motor, LEDs, buttons, and LCD display to the Arduino as specified in the overview.
 2. **Load Code**: Upload the code from `lock_system.ino` to your Arduino board.
 3. **Initial Code**: The default code is `1,2,3,4`. Change this by following the steps for updating the code.
-4. **Library Requirements**:
-   - Install the `Servo` library.
-   - Install the `EEPROM` library (built into Arduino IDE).
-   - Install the `LiquidCrystal_I2C` library for LCD handling.
 
 ## Usage
 
