@@ -293,8 +293,6 @@ void lockedState() {
     lcd.clear();
     lcd.setCursor(0, 0);
     lcd.print("LOCKED");
-    lcd.SetCursor(0, 1);
-    lcd.write(0);
     currentDisplayMessage = "LOCKED";
   }
 
@@ -317,8 +315,6 @@ void unlockedState() {
     lcd.clear();
     lcd.setCursor(0, 0);
     lcd.print("UNLOCKED");
-    lcd.setCursor(0, 1);
-    lcd.write(1);
     currentDisplayMessage = "UNLOCKED";
   }
 
@@ -346,6 +342,13 @@ void updateCodeState() {
   digitalWrite(GREEN_LED, HIGH);
   digitalWrite(RED_LED, LOW);
   isChangingCode = true;
+
+  if (currentDisplayMessage != "CODE CHANGE") {
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("CODE CHANGE");
+    currentDisplayMessage = "CODE CHANGE";
+  }
   
   // Wait for the user to enter the new code twice
   while (isChangingCode && (inputCodeTries < 2)) {
